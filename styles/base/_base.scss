@@ -1,3 +1,9 @@
 section {
     height: 100vh;
 }
+
+body {
+    background-color: $color-primary;
+    color: $color-accent;
+    font-family: $suisse;
+}
