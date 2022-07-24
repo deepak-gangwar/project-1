@@ -9,10 +9,12 @@ html(lang="en")
         //- svg 
         
         main.app
+    
+            include ./views/partials/preloader
+            include ./views/partials/navigation
+
             // To implement smooth-scrolling
             .app__wrapper
-                include ./views/partials/preloader
-                include ./views/partials/navigation
 
                 // Sections of the homepage
                 include ./views/sections/hero
