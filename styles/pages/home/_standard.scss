@@ -1,0 +1,35 @@
+.standard {
+  margin: 1.5vw;
+  padding-bottom: 8.3333333vw;
+}
+
+.standard__wrapper  {
+
+}
+
+.standard__subtitle {
+  font-size: 0.8vw;
+  text-transform: uppercase;
+}
+
+.standard__content {
+    // width: 58.5vw;    
+    width: 53.5vw;
+    margin: 1.5vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.standard__heading {
+    font-size: 3vw;
+    line-height: 1.14;
+    letter-spacing: -.05vw;
+}
+
+.standard__body {
+    // margin-top: 1.2vw;
+    margin-top: 0.3vw;
+    font-size: .99999999vw;
+    letter-spacing: .02em;
+    line-height: 2;
+}
