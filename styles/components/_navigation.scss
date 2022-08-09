@@ -2,7 +2,10 @@
     width: 100vw;
     padding: 3.3vw 5vw;
     background-color: $color-primary;
-    z-index: z('navigation');
+    padding: fixed;
+    top: 0;
+    left: 0;
+    // z-index: z('navigation');
 }
 
 .nav__wrapper {
