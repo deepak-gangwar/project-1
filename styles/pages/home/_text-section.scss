@@ -12,6 +12,12 @@
     margin: 0 25px;
 } 
 
+@media only screen and (max-width: 480px) {
+    .text-section__wrapper {
+        text-align: left;
+    }
+}
+
 .text-section__heading {
     font-size: 4.9999997vw;
     letter-spacing: -.02em;
@@ -20,9 +26,23 @@
     margin-bottom: 4.37499999vw;
 }
 
+@media only screen and (max-width: 480px) {
+    .text-section__heading {
+        font-size: 1.6rem;
+        line-height: 1.25;
+        margin-bottom: 15vw;
+    }
+}
+
 .text-section__description {
-    // font-size: .83333333vw;
     font-size: .99999999vw;
     letter-spacing: .02em;
     line-height: 2;
+}
+
+@media only screen and (max-width: 480px) {
+    .text-section__description {
+        font-size: 0.75rem;
+        margin-right: 30vw;
+    }
 }
