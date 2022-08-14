@@ -2,7 +2,12 @@ section.carousel
     .carousel__wrapper 
         .carousel__background 
             .carousel__background__image
-                img(src="images/webp/1.webp", alt="carousel image")
+                //- <picture>
+                //-     <source srcset="images/webp/1.webp" type="image/webp">
+                //-     <source srcset="images/jpg/1.jpg" type="image/jpeg"> 
+                //-     <img src="images/jpg/1.jpg" alt="carousel image">
+                //- </picture>
+                <img src="images/jpg/1.jpg" alt="carousel image">
 
         .carousel__content 
             .carousel__headings

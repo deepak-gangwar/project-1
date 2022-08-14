@@ -18,10 +18,22 @@ section.spotlight
             ul.spotlight__slider__items
                 li.spotlight__slider__item
                     .slider__item__container
-                        img(src="images/webp/3.webp", alt="image 1 of slider" height="254")
+                        <picture>
+                            <source srcset="images/webp/3.webp" type="image/webp">
+                            <source srcset="images/jpg/3.jpg" type="image/jpeg"> 
+                            <img src="images/jpg/3.jpg" alt="image 1 of slider" height="254">
+                        </picture>
                 li.spotlight__slider__item
                     .slider__item__container
-                        img(src="images/webp/2.webp", alt="image 2 of slider" height="600")
+                        <picture>
+                            <source srcset="images/webp/2.webp" type="image/webp">
+                            <source srcset="images/jpg/2.jpg" type="image/jpeg"> 
+                            <img src="images/jpg/2.jpg" alt="image 2 of slider" height="600">
+                        </picture>
                 li.spotlight__slider__item
                     .slider__item__container
-                        img(src="images/webp/4.webp", alt="image 3 of slider" height="420")
+                        <picture>
+                            <source srcset="images/webp/4.webp" type="image/webp">
+                            <source srcset="images/jpg/4.jpg" type="image/jpeg"> 
+                            <img src="images/jpg/4.jpg" alt="image 3 of slider" height="420">
+                        </picture>

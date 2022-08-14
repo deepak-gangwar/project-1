@@ -1,10 +1,18 @@
 section.ethos
     .ethos__wrapper 
         .ethos__images
+            .ethos__image__item
+                <picture>
+                    <source srcset="images/webp/10.webp" type="image/webp">
+                    <source srcset="images/jpg/10.jpg" type="image/jpeg"> 
+                    <img src="images/jpg/10.jpg" alt="image 1 of ethos">
+                </picture> 
             .ethos__image__item 
-                img(src="images/webp/7.webp", alt="image 1 of ethos")
-            .ethos__image__item 
-                img(src="images/webp/10.webp", alt="image 2 of ethos")
+                <picture>
+                    <source srcset="images/webp/10.webp" type="image/webp">
+                    <source srcset="images/jpg/10.jpg" type="image/jpeg"> 
+                    <img src="images/jpg/10.jpg" alt="image 2 of ethos">
+                </picture>
 
         .ethos__content 
             span.ethos__content__subtitle Our ethos 
