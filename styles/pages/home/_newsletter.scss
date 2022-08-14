@@ -13,10 +13,27 @@
     width: 94.444444443vw;
 }
 
+@media only screen and (max-width: 480px) {
+    .newsletter__wrapper {
+        flex-direction: column;
+        align-items: normal;
+        margin: 25px;
+    }
+}
+
 .newsletter__content  {
     font-size: 2.91666666665vw;
     // width: 26.5625vw;
 }
+
+
+@media only screen and (max-width: 480px) {
+    .newsletter__content {
+        font-size: 1.6rem;
+        line-height: 1.25;
+    }
+}
+
 
 .newsletter__signup {
     display: flex;
