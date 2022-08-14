@@ -3,6 +3,12 @@
   padding-bottom: 8.3333333vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard {
+    margin: 25px;
+  }
+}
+
 .standard__wrapper  {
 
 }
@@ -17,7 +23,14 @@
     width: 53.5vw;
     margin: 1.5vw 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 480px) {
+  .standard__content {
+    width: 100%;
+  }
 }
 
 .standard__heading {
@@ -26,10 +39,24 @@
     letter-spacing: -.05vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard__heading {
+    font-size: 1.6rem;
+    // line-height: 2;
+  }
+}
+
 .standard__body {
     // margin-top: 1.2vw;
     margin-top: 0.3vw;
     font-size: .99999999vw;
     letter-spacing: .02em;
     line-height: 2;
+}
+
+@media only screen and (max-width: 480px) {
+  .standard__body {
+    font-size: 0.75rem;
+    margin-right: 10vw;
+  }
 }

@@ -251,6 +251,11 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: hidden;
 }
 
+@media only screen and (max-width: 480px) {
+  .slider {
+    height: 30vh;
+  }
+}
 .slider__wrapper {
   height: 100%;
   width: 120vw;
@@ -521,6 +526,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 3vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__wrapper {
+    margin: 25px;
+  }
+}
 .flow__border {
   content: "";
   width: 97vw;
@@ -532,6 +542,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 80vw;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 3.6vw 0 7vw;
 }
 
@@ -541,12 +552,24 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.05vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__heading {
+    font-size: 1.6rem;
+    line-height: 2;
+  }
+}
 .flow__body {
   font-size: 0.99999999vw;
   letter-spacing: 0.02em;
   line-height: 2;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__body {
+    font-size: 0.75rem;
+    margin-right: 10vw;
+  }
+}
 .flow__images {
   height: 100vh;
   width: 100%;
@@ -555,6 +578,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__images {
+    height: 50vh;
+  }
+}
 .flow__image {
   overflow: hidden;
 }
@@ -578,6 +606,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 8.3333333vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard {
+    margin: 25px;
+  }
+}
 .standard__subtitle {
   font-size: 0.8vw;
   text-transform: uppercase;
@@ -587,15 +620,26 @@ h1, h2, h3, h4, h5, h6 {
   width: 53.5vw;
   margin: 1.5vw 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard__content {
+    width: 100%;
+  }
+}
 .standard__heading {
   font-size: 3vw;
   line-height: 1.14;
   letter-spacing: -0.05vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard__heading {
+    font-size: 1.6rem;
+  }
+}
 .standard__body {
   margin-top: 0.3vw;
   font-size: 0.99999999vw;
@@ -603,6 +647,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 2;
 }
 
+@media only screen and (max-width: 480px) {
+  .standard__body {
+    font-size: 0.75rem;
+    margin-right: 10vw;
+  }
+}
 .carousel__wrapper {
   height: calc(100vh + 41.66667vw);
   min-height: 118.7499999924vw;

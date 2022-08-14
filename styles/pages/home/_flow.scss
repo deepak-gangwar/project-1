@@ -9,6 +9,12 @@
     padding-top: 3vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__wrapper {
+    margin: 25px;
+  }
+}
+
 .flow__border {
     content: '';
     width: 97vw;
@@ -20,6 +26,7 @@
   width: 80vw;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 3.6vw 0 7vw;
 }
 
@@ -29,10 +36,24 @@
   letter-spacing: -.05vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .flow__heading {
+    font-size: 1.6rem;
+    line-height: 2;
+  }
+}
+
 .flow__body {
     font-size: .99999999vw;
     letter-spacing: .02em;
     line-height: 2;
+}
+
+@media only screen and (max-width: 480px) {
+  .flow__body {
+    font-size: 0.75rem;
+    margin-right: 10vw;
+  }
 }
 
 .flow__images {
@@ -41,6 +62,12 @@
   position: relative;
   display: flex;
   gap: 1.5vw;
+}
+
+@media only screen and (max-width: 480px) {
+  .flow__images {
+    height: 50vh;
+  }
 }
 
 .flow__image {
