@@ -13,9 +13,19 @@ class App {
         this.init()
     }
 
+    // if it is not a mobile device then you run the code.
+    isMobile() {
+        if(!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+            return false
+        } else {
+            return true
+        }
+    }
+
     init() {
-        new SmoothScroll(this.element, this.elements)
-        console.log("App")
+        if(!this.isMobile()) {
+            new SmoothScroll(this.element, this.elements)
+        }
     }
 }
 
