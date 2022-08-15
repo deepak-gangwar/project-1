@@ -163,6 +163,13 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav {
+    width: initial;
+    padding: 0;
+    margin: 25px;
+  }
+}
 .nav__wrapper {
   width: 100%;
   display: flex;
@@ -181,6 +188,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav__list {
+    display: none;
+  }
+}
 .nav__list__item:first-child {
   opacity: 0.54;
 }
@@ -194,10 +206,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 3vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav__menu__btn {
+    margin: 0;
+  }
+}
 .nav__menu__label-container {
   margin: auto;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav__menu__label-container {
+    display: none;
+  }
+}
 .nav__menu__icon-container {
   margin: auto;
   margin-left: 1vw;
@@ -208,6 +230,11 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav__menu__icon {
+    margin-bottom: 4px;
+  }
+}
 .nav__menu__icon-stroke {
   width: 1.4vw;
   height: 0.2vw;
@@ -215,6 +242,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #242b2d;
 }
 
+@media only screen and (max-width: 480px) {
+  .nav__menu__icon-stroke {
+    width: 5.5vw;
+    height: 2px;
+    margin: 1px 0;
+  }
+}
 .hero {
   height: 60vh;
   display: flex;
@@ -477,16 +511,33 @@ h1, h2, h3, h4, h5, h6 {
   margin: 12.5vw 15vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__wrapper {
+    flex-wrap: wrap;
+    margin: 25px;
+  }
+}
 .ethos__images {
   width: 35vw;
   margin-right: 5vw;
   position: relative;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__images {
+    width: 100%;
+    margin: 10vh 0;
+  }
+}
 .ethos__image__item {
   position: absolute;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__image__item {
+    position: relative;
+  }
+}
 .ethos__image__item > img {
   width: 100%;
   height: 100%;
@@ -499,6 +550,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 65%;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__image__item:first-child {
+    top: initial;
+    height: initial;
+  }
+}
 .ethos__image__item:last-child {
   right: 0;
   top: 50%;
@@ -506,6 +563,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 45%;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__image__item:last-child {
+    right: initial;
+    top: initial;
+    height: initial;
+    margin-left: auto;
+    margin-top: -40%;
+  }
+}
 .ethos__content__subtitle {
   font-size: 0.8vw;
   text-transform: uppercase;
@@ -520,6 +586,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__content__heading {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+}
 .ethos__content__description {
   font-size: 0.99999999vw;
   letter-spacing: 0.02em;
@@ -528,6 +600,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
 }
 
+@media only screen and (max-width: 480px) {
+  .ethos__content__description {
+    font-size: 0.75rem;
+  }
+}
 .flow__wrapper {
   margin: 1.5vw;
   box-sizing: border-box;
@@ -812,6 +889,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background-color: #abaea8;
   background-image: url(images/6.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .newsletter {
@@ -937,7 +1017,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
-  height: 100vh;
+  height: 110vh;
   box-sizing: border-box;
   padding-bottom: 13.7499999998vw;
   padding-top: 5.3472222219vw;
@@ -945,6 +1025,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #242b2d;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer {
+    margin: 25px;
+    height: fit-content;
+  }
+}
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
@@ -953,11 +1039,23 @@ h1, h2, h3, h4, h5, h6 {
   width: 46.5277777777vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__wrapper {
+    flex-direction: column;
+    margin-right: 0;
+    width: 50%;
+  }
+}
 .footer__list__container {
   margin-bottom: 13.5416666658vw;
   width: 22.5694444444vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__list__container {
+    width: auto;
+  }
+}
 .footer__list__name {
   font-size: 1.9444444444vw;
   margin-bottom: 1.9444444443vw;
@@ -965,6 +1063,13 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__list__name {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-top: 10vw;
+  }
+}
 .footer__list__name::after {
   background-color: rgba(76, 75, 66, 0.15);
   bottom: 0;
@@ -984,6 +1089,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 2.57;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__link {
+    font-size: 0.75rem;
+  }
+}
 .footer__link > a {
   color: inherit;
   text-decoration: none;
@@ -1002,19 +1112,47 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.833333333vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__bottom {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-size: 0.5rem;
+  }
+}
 .footer__legals {
   display: flex;
   padding-left: 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__legals {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
 .footer__legals__item {
   margin-right: 1.2499999999vw;
 }
 
+@media only screen and (max-width: 480px) {
+  .footer__legals__item {
+    margin-right: 0;
+  }
+}
 .footer__developer {
   align-items: center;
   display: flex;
   justify-self: flex-end;
   margin-top: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer__developer {
+    display: block;
+    text-align: center;
+    margin-bottom: 10vw;
+  }
 }
 </style></head><body><main class="app"><div class="preloader"><p class="preloader__text">Loading</p><div class="preloader__number">0%</div><span class="preloader__progress-bar"></span></div><nav class="nav"><div class="nav__wrapper"><a class="nav__logo" href="/">Millers Ponit Penthouse</a><div class="nav__left"><ul class="nav__list"><li class="nav__list__item"><a class="nav__list__link" href="">Booking</a></li><li class="nav__list__item"><a class="nav__list__link" href="">Altstadt</a></li><li class="nav__list__item"><a class="nav__list__link" href="">Stadsmitte</a></li></ul><a class="nav__menu__btn" href="/"><div class="nav__menu__label-container"><span class="nav__menu__label">Menu</span></div><div class="nav__menu__icon-container"><div class="nav__menu__icon"><div class="nav__menu__icon-stroke"></div><div class="nav__menu__icon-stroke"></div></div></div></a></div></div><div class="nav__menu"></div></nav><div class="app__wrapper"><section class="hero"><div class="hero__wrapper"><h1 class="hero__title">Millers Point Penthouse<br>by Studio Barbara</h1><p class="hero__subtitle">The Local Project</p></div></section><div class="slider"><div class="slider__wrapper"><div class="slider__item"><picture><source srcset="images/webp/5.webp" type="image/webp"><source srcset="images/jpg/5.jpg" type="image/jpeg"><img src="images/jpg/5.jpg" alt="item-1"></picture></div><div class="slider__item"><picture><source srcset="images/webp/10.webp" type="image/webp"><source srcset="images/jpg/10.jpg" type="image/jpeg"><img src="images/jpg/10.jpg" alt="item-2"></picture></div><div class="slider__item"><picture><source srcset="images/webp/3.webp" type="image/webp"><source srcset="images/jpg/3.jpg" type="image/jpeg"><img src="images/jpg/3.jpg" alt="item-3"></picture></div><div class="slider__item"><picture><source srcset="images/webp/6.webp" type="image/webp"><source srcset="images/jpg/6.jpg" type="image/jpeg"><img src="images/jpg/6.jpg" alt="item-4"></picture></div><div class="slider__item"><picture><source srcset="images/webp/9.webp" type="image/webp"><source srcset="images/jpg/9.jpg" type="image/jpeg"><img src="images/jpg/9.jpg" alt="item-5"></picture></div></div></div><section class="text-section text-section1"><div class="text-section__wrapper"><p class="text-section__heading">A warm and curvilinear home, Millers Point<br>Penthouse proposes a softer aspect to<br>urban living.</p><p class="text-section__description">Collaborating with Elton Group, Studio Barbara revives a<br>previously dated apartment in the heart of Sydney’s CBD.</p></div></section><section class="spotlight"><div class="spotlight__wrapper"><span class="spotlight__subtitle">Spotlight</span><p class="spotlight__title">Mink Veener<br>by Elton Group</p><div class="spotlight__slider"><div class="spotlight__slider__controls"><span class="slider__control--left"><svg></svg></span><span class="slider__control--right"><svg></svg></span></div><ul class="spotlight__slider__items"><li class="spotlight__slider__item"><div class="slider__item__container"><picture><source srcset="images/webp/3.webp" type="image/webp"><source srcset="images/jpg/3.jpg" type="image/jpeg"><img src="images/jpg/3.jpg" alt="image 1 of slider" height="254"></picture></div></li><li class="spotlight__slider__item"><div class="slider__item__container"><picture><source srcset="images/webp/2.webp" type="image/webp"><source srcset="images/jpg/2.jpg" type="image/jpeg"><img src="images/jpg/2.jpg" alt="image 2 of slider" height="600"></picture></div></li><li class="spotlight__slider__item"><div class="slider__item__container"><picture><source srcset="images/webp/4.webp" type="image/webp"><source srcset="images/jpg/4.jpg" type="image/jpeg"><img src="images/jpg/4.jpg" alt="image 3 of slider" height="420"></picture></div></li></ul></div></div></section><section class="marquee"><div class="marquee__wrapper"><div class="headline">Mink Veener by Elton Group as a point of material consistency. Mink Veener by Elton Group as a point of material consistency.</div><div class="headline">Mink Veener by Elton Group as a point of material consistency. Mink Veener by Elton Group as a point of material consistency.</div></div><div class="marquee__wrapper"><div class="headline">roup as a point of material consistency. Mink Veener by Elton Group as a point of material consistency. Mink Veener by Elton G</div><div class="headline">roup as a point of material consistency. Mink Veener by Elton Group as a point of material consistency. Mink Veener by Elton G</div></div></section><section class="ethos"><div class="ethos__wrapper"><div class="ethos__images"><div class="ethos__image__item"><picture><source srcset="images/webp/10.webp" type="image/webp"><source srcset="images/jpg/10.jpg" type="image/jpeg"><img src="images/jpg/10.jpg" alt="image 1 of ethos"></picture></div><div class="ethos__image__item"><picture><source srcset="images/webp/10.webp" type="image/webp"><source srcset="images/jpg/10.jpg" type="image/jpeg"><img src="images/jpg/10.jpg" alt="image 2 of ethos"></picture></div></div><div class="ethos__content"><span class="ethos__content__subtitle">Our ethos</span><p class="ethos__content__heading">Effortless<br>Chic Lifestyle</p><p class="ethos__content__description">Settled within a historic part of Sydney, Millers Point<br>Penthouse sits 28 storeys high overlooking the city<br>harbour. In contrast to the stilted atmosphere of the<br>pre-existing apartment, the renovated dwelling is a<br>space of unhurried motion, filled with subtle references<br>to the natural and urban setting.</p><p class="ethos__content__description">By removing and reintroducing internal walls, Studio<br>Barbara is able to pair the interior architecture of the<br>home with carefully layered decorative details, creating<br>an immersive residential experience.</p></div></div></section><section class="text-section text-section2"><div class="text-section__wrapper"><p class="text-section__heading">The idea of gradual, delightful discovery<br>is completely realised with the repeated<br>use of concealed lighting.</p><p class="text-section__description">A selection of understated marble creates a symphonic tonal interplay in the kitchen.<br>In contrast, the marble slabs used in the master ensuite have strong veining in allusion to the<br>movement of the clouds, contributing to an intimate and dramatic space that acts as a<br>refuge from the city.</p></div></section><section class="flow"><div class="flow__wrapper"><span class="flow__border"></span><div class="flow__content"><p class="flow__heading">Seven new<br>city icons.</p><p class="flow__body">Carefully controlling the flow of spaces, Studio Barbara<br>seamlessly transitions residents from the frenetic pace<br>of the city to the steady rhythm of a domestic environment.<br>A well-placed wall at the entrance to the apartment delays<br>the moment that the view of the city is revealed, allowing<br>residents to prepare for a change of scene. The idea of<br>gradual, delightful discovery is completely realised<br>with the repeated use of concealed lighting.</p></div><div class="flow__images"><div class="flow__image"><img src="images/webp/8.webp" alt="flow image 1"></div><div class="flow__image"><img src="images/webp/9.webp" alt="flow image 2"></div></div></div></section><section class="standard"><div class="standard__wrapper"><span class="standard__subtitle">Iconic living. Own it.</span><div class="standard__content"><p class="standard__heading">Don't settle for<br>standard.<br>Settle for a life less<br>ordinary.</p><p class="standard__body">Mink veneer by Elton Group is used as a point<br>of material consistency throughout Millers<br>Point Penthouse, guiding residents through<br>the apartment and softening the interior with<br>its muted walnut tone. In the hands of a skilled<br>joiner, the timber creates curved forms that<br>define the home – found in the treatment of the<br>stairwell, joinery and bulkheads, for instance –<br>abstractly referencing Sydney harbour and the<br>undulating hills of the landscape.</p></div></div></section><section class="carousel"><div class="carousel__wrapper"><div class="carousel__background"><div class="carousel__background__image"><img src="images/jpg/1.jpg" alt="carousel image"></div></div><div class="carousel__content"><div class="carousel__headings"><div class="carousel__heading current"><p>Designing<br>Kitchen and<br>Master Ensuite</p></div><div class="carousel__heading"><p>Designing Kitchen and Master Ensuite</p></div><div class="carousel__heading"><p>Designing Kitchen and Master Ensuite</p></div></div><div class="carousel__texts"><div class="carousel__text current"><p>A black steel band supporting the kitchen island<br>bench pays homage to the harbour bridge whilst<br>fluted tiles replicate the visual pattern of the<br>waves below.</p></div><div class="carousel__text"><p>A black steel band supporting the kitchen island bench pays homage to the harbour bridge whilst fluted tiles replicate the visual pattern of the waves below.</p></div><div class="carousel__text"><p>A black steel band supporting the kitchen island bench pays homage to the harbour bridge whilst fluted tiles replicate the visual pattern of the waves below.</p></div></div><div class="carousel__arrows"><span class="carousel__arrow carousel__arrow--left"><svg viewbox="0 0 15 10" fill="none"><path d="M15 5L1.5 5M1.5 5L5.79032 1M1.5 5L5.79032 9" stroke="#242b2d"></path></svg></span><span class="carousel__arrow carousel__arrow--right"><svg viewbox="0 0 15 10" fill="none"><path d="M0 5L13.5 5M13.5 5L9.20968 9M13.5 5L9.20968 1" stroke="#242b2d"></path></svg></span></div></div></div></section><section class="text-section text-section3"><div class="text-section__wrapper"><p class="text-section__heading">Millers Point Penthouse represents a<br>sophisticated interpretation of Sydney<br>apartment living.</p><p class="text-section__description">Translating the movement of the city into a designed landscape of curves,<br>Studio Barbara creates a home that is both connected to its location and<br>blissfully removed.</p></div></section><section class="video"><div class="video__wrapper"><div class="video__content"></div><div class="video__cursor"></div></div></section><section class="newsletter"><div class="newsletter__wrapper"><h5 class="newsletter__content">For the latest news, subscribe<br>here.</h5><div class="newsletter__signup"><input class="newsletter__input" type="email" placeholder="Please enter your email once"><div class="newsletter__submit"><svg viewbox="0 0 15 10" fill="none"><path d="M0 5h13.5m0 0L9.21 9m4.29-4L9.21 1"></path></svg></div><div class="newsletter__messages"><div class="newsletter__message newsletter__messages--success"></div><div class="newsletter__message newsletter__messages--error"></div></div></div></div></section><footer class="footer"><div class="footer__wrapper"><div class="footer__list__container"><h6 class="footer__list__name">Website</h6><ul class="footer__list"><li class="footer__link"><a href="">Products</a></li><li class="footer__link"><a href="">Technology</a></li><li class="footer__link"><a href="">About and Careers</a></li><li class="footer__link"><a href="">Visualizer</a></li><li class="footer__link"><a href="">Dealer locator</a></li><li class="footer__link"><a href="">Care and Maintenance</a></li><li class="footer__link"><a href="">Contact</a></li></ul></div><div class="footer__list__container"><h6 class="footer__list__name">Follow Us</h6><ul class="footer__list"><li class="footer__link"><a href="">Facebook</a></li><li class="footer__link"><a href="">Twitter</a></li><li class="footer__link"><a href="">Instagram</a></li><li class="footer__link"><a href="">YouTube</a></li></ul></div></div><div class="footer__bottom"><ul class="footer__legals"><li class="footer__legals__item"><a class="footer__legals__link" href="/">Privacy Policy</a></li><li class="footer__legals__item"><a class="footer__legals__link" href="/">Terms of Use</a></li><li class="footer__legals__item"><a class="footer__legals__link" href="/">Terms &amp; Conditions</a></li></ul><a class="footer__developer" href=""><p>Website by Deepak Gangwar</p></a></div></footer></div></main><script src="main.js"></script></body></html>
