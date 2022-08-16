@@ -1,12 +1,7 @@
-// section {
-//     height: 100vh;
-// }
-
 body {
     background-color: $color-primary;
     color: $color-accent;
     font-family: $suisse;
-    // letter-spacing: -1px;
 }
 
 ol, ul {
@@ -20,6 +15,10 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+}
+
+image, picture {
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 480px) {

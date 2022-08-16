@@ -2,7 +2,6 @@
     width: 100vw;
     padding: 3.3vw 5vw;
     background-color: $color-primary;
-    padding: fixed;
     top: 0;
     left: 0;
 }
@@ -13,48 +12,40 @@
         padding: 0;
         margin: 25px;
     }
-  }
-  
-.nav__wrapper {
-    width: 100%;
+}
+
+.nav__wrapper,
+.nav__left,
+.nav__list,
+.nav__menu__btn,
+.nav__menu__icon {
     display: flex;
+}
+
+.nav__wrapper {
     justify-content: space-between;
 }
 
 .nav__left {
     text-transform: uppercase;
     font-size: 0.8vw;
-    display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.nav__logo {}
-
-.nav__logo__icon {}
-
-.nav__list {
-    display: flex;
 }
 
 @media only screen and (max-width: 480px) {
     .nav__list {
         display: none;
     }
-  }
+}
   
 .nav__list__item:first-child {
     opacity: 0.54;
 }
-
-.nav__list__item {}
 
 .nav__list__link {
     margin-left: 1vw;
 }
 
 .nav__menu__btn {
-    display: flex;
     margin-left: 3vw;
 }
 
@@ -62,7 +53,7 @@
     .nav__menu__btn {
         margin: 0;
     }
-  }
+}
   
 .nav__menu__label-container {
     margin: auto;
@@ -72,9 +63,6 @@
     .nav__menu__label-container {
         display: none;
     }
-  }
-  
-.nav__menu__label {
 }
 
 //Hamburger icon 
@@ -85,7 +73,6 @@
 }
 
 .nav__menu__icon {
-    display: flex;
     flex-direction: column;
 }
 
@@ -93,7 +80,7 @@
     .nav__menu__icon {
         margin-bottom: 4px;
     }
-  }
+}
   
 .nav__menu__icon-stroke {
     width: 1.4vw;
@@ -108,6 +95,4 @@
         height: 2px;
         margin: 1px 0;
     }
-  }
-  
-.nav__menu {}
+}

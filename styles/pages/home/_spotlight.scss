@@ -1,13 +1,9 @@
 .spotlight {
-
-}
-
-.spotlight__wrapper {
     margin: 8.4vw 9.8vw;
 }
 
 @media only screen and (max-width: 480px) {
-    .spotlight__wrapper {
+    .spotlight {
         margin: 25px;
     }
 }
@@ -15,7 +11,6 @@
 .spotlight__subtitle {
     font-size: 0.8vw;
     text-transform: uppercase;
-    // padding-left: 0.399999999vw;
 }
 
 .spotlight__title {
@@ -34,17 +29,6 @@
     }
 }
 
-.spotlight__slider {
-    width: 100%;
-    height: 103vh;
-}
-
-@media only screen and (max-width: 480px) {
-    .spotlight__slider {
-        height: auto;
-    }
-}
-
 .spotlight__slider__controls {
     height: 20vh;
 }
@@ -55,29 +39,10 @@
     }
 }
 
-.slider__control--left {
-
-}
-
-.slider__control--left>svg {
-
-}
-
-.slider__control--right {
-
-}
-
-.slider__control--right>svg {
-
-}
-
 .spotlight__slider__items {
-    width: 100%;
-    height: 82vh;
     display: flex;
     gap: 3vw;
     padding: 0;
-    justify-content: space-between
 }
 
 @media only screen and (max-width: 480px) {
@@ -93,17 +58,8 @@
     }
 }
 
-.spotlight__slider__item {
-    height: 100%;
-    overflow: hidden;
-}
-
-.slider__item__container {
-    overflow: hidden;
-}
-
-.slider__item__container>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media only screen and (min-width: 480px) and (max-width: 1000px) {
+    img, picture {
+        height: auto;
+    }
 }
