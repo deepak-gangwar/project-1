@@ -4,30 +4,15 @@
     letter-spacing: -.15vw;
     padding-top: 1.5vw;
     overflow: hidden;
-    // overflow-y: hidden;
-    // overflow-x: hidden;
     display: flex;
-    // flex-direction: row;
-    // overflow-x: hidden !important;
-    // display: flex !important;
-    // flex-direction: row !important;
 }
 
 .headline {
-    --play: running;
-    --direction: normal;
-    --duration: 30s;
-    --delay: 0s;
-    --iteration-count: infinite;
-
     flex: 0 0 auto;
     min-width: 100%;
     z-index: 1;
     display: flex;
-    animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
-    animation-play-state: var(--play);
-    animation-delay: var(--delay);
-    animation-direction: var(--direction);
+    animation: scroll 30s linear 0s infinite;
 }
 
 .marquee__wrapper:nth-child(2) .headline{
