@@ -1,17 +1,16 @@
 section.newsletter
-    .newsletter__wrapper 
-        h5.newsletter__content 
-            | For the latest news, subscribe
-            br
-            | here.
+    h5.newsletter__content 
+        | For the latest news, subscribe
+        br
+        | here.
 
-        .newsletter__signup
-            input(type="email", placeholder="Please enter your email once" ).newsletter__input
-            
-            .newsletter__submit 
-                svg(viewbox='0 0 15 10' fill='none')
-                  path(d='M0 5h13.5m0 0L9.21 9m4.29-4L9.21 1')
+    .newsletter__signup
+        input(type="email", placeholder="Please enter your email once" ).newsletter__input
+        
+        .newsletter__submit 
+            svg(viewbox='0 0 15 10' fill='none')
+                path(d='M0 5h13.5m0 0L9.21 9m4.29-4L9.21 1')
 
-            .newsletter__messages
-                .newsletter__message.newsletter__messages--success
-                .newsletter__message.newsletter__messages--error
+        .newsletter__messages
+            .newsletter__message.newsletter__messages--success
+            .newsletter__message.newsletter__messages--error

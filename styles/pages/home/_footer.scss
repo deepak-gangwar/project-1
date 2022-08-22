@@ -1,6 +1,5 @@
 .footer {
     height: 110vh;
-    box-sizing: border-box;
     padding-bottom: 13.7499999998vw;
     padding-top: 5.3472222219vw;
     position: relative;
@@ -10,7 +9,6 @@
 @media only screen and (max-width: 480px) {
     .footer {
         margin: 25px;
-        // height: auto;
         height: fit-content;
     }
 }
@@ -27,7 +25,6 @@
     .footer__wrapper {
         flex-direction: column;
         margin-right: 0;
-        // width: fit-content;
         width: 50%;
     }
 }
@@ -60,12 +57,12 @@
 
 .footer__list__name::after {
     background-color: rgba(76,75,66,.15);
-    bottom: 0;
     content: "";
-    height: 0.0694444444vw;
-    left: 0;
-    position: absolute;
     width: 100%;
+    height: 0.0694444444vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .footer__list {
@@ -133,11 +130,6 @@
     .footer__legals__item {
         margin-right: 0;
     }
-}
-
-
-.footer__legals__link {
-    
 }
 
 .footer__developer {
