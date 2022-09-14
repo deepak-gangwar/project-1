@@ -4,7 +4,7 @@ A promotional site for The Local Project, Australia.
 ### Installation
 ```bash
 # Clone the repo on you local machine
-git clone git@github.com:deepak-gangwar/bundler-webpack-config.git
+git clone git@github.com:deepak-gangwar/project-1.git
 
 # To install dependencies
 npm install
