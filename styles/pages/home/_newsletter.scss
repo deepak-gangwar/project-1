@@ -44,7 +44,8 @@
     border: 0.0694444444vw solid $color-accent;
     border-radius: 3.472222222vw;
     caret-color: $color-accent;
-    color: $color-orange;
+    // This was causing issue of background and foreground not having sufficient contrast ratio
+    // color: $color-orange;
     font-size: .6944444444vw;
     letter-spacing: .06em;
     text-transform: uppercase;
