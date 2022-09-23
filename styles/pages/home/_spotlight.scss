@@ -63,3 +63,22 @@
         height: auto;
     }
 }
+
+.spotlight__slider__item:nth-child(1) {
+    height: 254px;
+}
+
+.spotlight__slider__item:nth-child(2) {
+    height: 600px;
+}
+
+.spotlight__slider__item:nth-child(3) {
+    height: 420px;
+}
+
+.spotlight__slider__img {
+    display: initial;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
