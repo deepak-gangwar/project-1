@@ -1,7 +1,8 @@
 section.video 
     .video__content 
-        video(autoplay playsinline disablepictureinpicture loop="loop" muted="muted") 
+        video(autoplay playsinline disablepictureinpicture loop="loop" muted="muted" oncontextmenu="return false;") 
             source( src="preview.mp4" type="video/mp4")
             //- source( src="https://a.storyblok.com/f/133769/x/3879cd8d95/preview.mp4" type="video/mp4")
 
     .video__cursor
+        span Play
