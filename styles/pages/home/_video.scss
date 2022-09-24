@@ -1,24 +1,23 @@
 .video {
     // aspect ratio box
-    height: 0;
-    padding-top: calc(1080 / 1920 * 100%);
+    // height: 0;
+    // padding-top: calc(1080 / 1920 * 100%);
     width: 100%;
-    background-color: $color-orange;
-    background-image: url("images/webp/6.webp");
+    height: calc(1080 / 1920 * 100%);
+    background-color: $color-accent;
+    // background-color: $color-orange;
+    // background-image: url("images/webp/6.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.video__wrapper {
-}
-
-.video__content {
-
-}
-
-.video__content>img {
-    
+.video__content video{
+    opacity: 0.3;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .video__cursor {
