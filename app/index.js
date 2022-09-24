@@ -1,4 +1,5 @@
 import SmoothScroll from './components/smoothScroll'
+import Cursor from './components/cursor'
 import { split } from './utils/text'
 
 class App {
@@ -26,6 +27,7 @@ class App {
     init() {
         if(!this.isMobile()) {
             new SmoothScroll(this.element, this.elements)
+            new Cursor()
         }
     }
 
@@ -58,52 +60,3 @@ class App {
 }
 
 new App()
-
-
-
-
-
-
-
-const ease = 0.1;
-
-const video = document.querySelector('.video')
-const cursor = {
-  el: document.querySelector('.video__cursor'),
-  bound: document.querySelector('.video__cursor').getBoundingClientRect().width,
-  pos: {
-    x: 0,
-    y: 0
-  }
-}
-
-const mouse = {
-  x: 0,
-  y: 0
-};
-
-window.addEventListener('mousemove', (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
-
-let isHover = false
-video.addEventListener('mouseenter', () => isHover = true)
-video.addEventListener('mouseleave', () => isHover = false)
-
-
-const tick = () => {
-  cursor.pos.x += (mouse.x - cursor.pos.x) * ease;
-  cursor.pos.y += (mouse.y - cursor.pos.y) * ease;
-      
-  if(!isHover) {
-    cursor.el.style.transform = `translate(${cursor.pos.x - cursor.bound / 2}px, ${cursor.pos.y - cursor.bound / 2}px) scale(0)`
-  }
-  else if(isHover) {
-    cursor.el.style.transform = `translate(${cursor.pos.x - cursor.bound / 2}px, ${cursor.pos.y - cursor.bound / 2}px) scale(1)`
-  }
-  
-  requestAnimationFrame(tick);
-}
-
-tick();
