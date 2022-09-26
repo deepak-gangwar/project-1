@@ -262,10 +262,16 @@ image, picture {
     margin: 0 25px;
   }
 }
+.hero__title__wrapper {
+  overflow: hidden;
+}
+
 .hero__title {
   font-size: clamp(1.8rem, 5.1vw, 6rem);
   letter-spacing: -1.2px;
   line-height: 1;
+  will-change: transform;
+  transform: translate3d(0, 0px, 0);
 }
 
 @media only screen and (max-width: 480px) {
