@@ -11,6 +11,7 @@ export default class Preloader {
             title: document.querySelectorAll('.hero__title'),
             subtitle: document.querySelector('.hero__subtitle'),
             nav: document.querySelector('.nav'),
+            videoPlaceholder: document.querySelector('.video__content')
         }
 
         this.tl = new gsap.timeline()
@@ -19,7 +20,7 @@ export default class Preloader {
     }
     
     bind() {
-        ['onLoad'].forEach(fn => this[fn] =  this[fn].bind(this))
+        ['onLoad', 'delayedVideoLoad'].forEach(fn => this[fn] =  this[fn].bind(this))
     }
 
     onLoad() {
@@ -36,6 +37,26 @@ export default class Preloader {
         // fade in animation
         this.tl.from(this.elements.nav, { opacity: 0, duration: .25, ease: 'linear'})
         this.tl.from(this.elements.subtitle, { opacity: 0, duration: .25, ease: 'linear'})
+
+        //load the video now to improve performance
+        this.tl.call(this.delayedVideoLoad)
+        
+    }
+
+    delayedVideoLoad() {
+        let video = document.createElement('video')
+        video.autoplay = true
+        video.playsInline = true
+        video.disablePictureInPicture = true
+        video.loop = true
+        video.setAttribute('muted', 'muted')
+        video.setAttribute('oncontextmenu', 'return false;')
+        this.elements.videoPlaceholder.appendChild(video)
+
+        let source = document.createElement('source')
+        source.src = 'preview.mp4'
+        source.type = 'video/mp4'
+        video.appendChild(source)
     }
 
     addEventListeners() {
