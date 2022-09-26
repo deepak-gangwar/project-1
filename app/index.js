@@ -1,18 +1,17 @@
 import SmoothScroll from './components/smoothScroll'
 import Cursor from './components/cursor'
-import { split } from './utils/text'
+import Preloader from './components/preloader'
 
 class App {
     constructor() {
         this.element = document.querySelector('.app')
         this.elements = {
             wrapper: document.querySelector('.app__wrapper'),
-            heroLines: document.querySelectorAll('.hero__line__wrapper'),
-            heroDescription: document.querySelector('.hero__description')
         }
 
+        this.createPreloader()
         this.init()
-        this.styleConsoleForDevs()
+        // this.styleConsoleForDevs()
     }
 
     // if it is not a mobile device then you run the code.
@@ -29,6 +28,10 @@ class App {
             new SmoothScroll(this.element, this.elements)
             new Cursor()
         }
+    }
+
+    createPreloader() {
+        this.preloader = new Preloader
     }
 
     styleConsoleForDevs() {
