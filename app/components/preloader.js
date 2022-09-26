@@ -5,9 +5,6 @@ export default class Preloader {
         this.bind()
 
         this.preloader = document.querySelector('.preloader')
-        // this.slider = document.querySelector('.slider')
-        // this.slides = this.slider.querySelectorAll('.slider__item')
-        // this.heroTitle = document.querySelectorAll('.hero__title')
         this.elements = {
             slider: document.querySelector('.slider'),
             slides: document.querySelectorAll('.slider__item'),

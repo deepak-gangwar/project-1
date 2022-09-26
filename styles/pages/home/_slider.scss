@@ -1,6 +1,5 @@
 .slider {
     height: 80vh;
-    // z-index: 3;
 }
 
 @media only screen and (max-width: 480px) {
@@ -19,6 +18,7 @@
 }
 
 .slider__item {
+    background: rbga(0, 0, 0, 0.04);
     height: 100%;
     transform: translateY(-70vh);
 }

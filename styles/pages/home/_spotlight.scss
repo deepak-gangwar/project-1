@@ -45,6 +45,10 @@
     padding: 0;
 }
 
+.spotlight__slider__item {
+    background: rgba(0, 0, 0, 0.04);
+}
+
 @media only screen and (max-width: 480px) {
     .spotlight__slider__items {
         height: 44vh;
