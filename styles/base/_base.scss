@@ -2,7 +2,8 @@ body {
     background-color: $color-primary;
     color: $color-accent;
     font-family: $suisse;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 ol, ul {

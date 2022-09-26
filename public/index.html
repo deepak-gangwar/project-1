@@ -96,7 +96,8 @@ body {
   background-color: #f4f4f2;
   color: #242b2d;
   font-family: "Suisse Intl";
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 ol, ul {
@@ -863,6 +864,11 @@ image, picture {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 480px) {
+  .video__cursor {
+    display: none;
+  }
+}
 .newsletter {
   display: flex;
   justify-content: space-between;

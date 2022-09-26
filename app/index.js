@@ -11,7 +11,7 @@ class App {
 
         this.createPreloader()
         this.init()
-        // this.styleConsoleForDevs()
+        this.styleConsoleForDevs()
     }
 
     // if it is not a mobile device then you run the code.

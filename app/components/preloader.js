@@ -33,7 +33,7 @@ export default class Preloader {
         this.tl.to(this.elements.slides, { y: 0, duration: 2, ease: "power3.inOut", stagger: 0.05 })
 
         // title reveal animation
-        this.tl.set(document.body, { overflow: 'visible' })
+        this.tl.set(document.body, { overflowY: 'visible' })
         this.tl.from(this.elements.title, { transform: 'translate3d(0, -150%, 0) skewY(-4deg)', duration: 1.2, ease: 'power3.out', stagger: 0.1})
 
         // fade in animation
