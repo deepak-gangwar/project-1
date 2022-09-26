@@ -39,7 +39,7 @@ export default class Preloader {
         this.tl.from(this.elements.subtitle, { opacity: 0, duration: .25, ease: 'linear'})
 
         //load the video now to improve performance
-        this.tl.call(this.delayedVideoLoad)
+        // this.tl.call(this.delayedVideoLoad)
         
     }
 
