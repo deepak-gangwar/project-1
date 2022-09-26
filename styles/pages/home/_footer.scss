@@ -1,6 +1,6 @@
 .footer {
     // height: 110vh;
-    padding-bottom: 13.7499999998vw;
+    padding-bottom: 5vw;
     padding-top: 5.3472222219vw;
     position: relative;
     color: $color-accent;
@@ -9,6 +9,7 @@
 @media only screen and (max-width: 480px) {
     .footer {
         margin: 25px;
+        padding-bottom: 13.7499999998vw;
         height: fit-content;
     }
 }
