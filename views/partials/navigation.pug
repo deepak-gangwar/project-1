@@ -21,10 +21,11 @@ nav.nav
                     span.nav__menu__label Menu
 
                 //Hamburger icon
-                .nav__menu__icon-container
-                    .nav__menu__icon
-                        .nav__menu__icon-stroke
-                        .nav__menu__icon-stroke
+                .icon(style='transform: translate(0px, 0px);')
+                    svg.icon-burger(viewbox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        line(x1='18' y1='0.6' y2='0.6' stroke='currentColor' stroke-width='1.2')
+                        line(x1='18' y1='5.7167' y2='5.7167' stroke='currentColor' stroke-width='1.2')
+                        line(x1='18' y1='10.8334' y2='10.8334' stroke='currentColor' stroke-width='1.2')
     
     // Page that contains the stuff when menu is opened
     .nav__menu
