@@ -14,6 +14,9 @@ export default class Cursor {
             }
         }
 
+        this.targetX = 0
+        this.targetY = 0
+
         this.mouse = {
             x: 0,
             y: 0
@@ -46,15 +49,19 @@ export default class Cursor {
     }
 
     update() {
-        this.cursor.pos.x += (this.mouse.x - this.cursor.pos.x) * this.ease;
-        this.cursor.pos.y += (this.mouse.y - this.cursor.pos.y) * this.ease;
+        this.cursor.pos.x += (this.mouse.x - this.cursor.pos.x) * this.ease
+        this.cursor.pos.y += (this.mouse.y - this.cursor.pos.y) * this.ease
+
+        this.targetX = this.cursor.pos.x - this.cursor.bound / 2
+        this.targetY = this.cursor.pos.y - this.cursor.bound / 2
             
         if(!this.state.isHovering) {
-            this.cursor.el.style.transform = `translate(${this.cursor.pos.x - this.cursor.bound / 2}px, ${this.cursor.pos.y - this.cursor.bound / 2}px) scale(0)`
+            this.cursor.el.style.transform = `translate(${this.targetX}px, ${this.targetY}px) scale(0)`
         }
         else if(this.state.isHovering) {
-            this.cursor.el.style.transform = `translate(${this.cursor.pos.x - this.cursor.bound / 2}px, ${this.cursor.pos.y - this.cursor.bound / 2}px) scale(1)`
+            this.cursor.el.style.transform = `translate(${this.targetX}px, ${this.targetY}px) scale(1)`
         }
+        
         this.requestAnimationFrame(this.update)
     }
 
