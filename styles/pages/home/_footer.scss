@@ -107,6 +107,12 @@
         width: auto;
         font-size: 0.5rem;
     }
+
+    // to make tap targets of appropriate size
+    .footer__legals {
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
 }
 
 .footer__legals {
