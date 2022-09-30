@@ -2,6 +2,7 @@ import SmoothScroll from './components/smoothScroll'
 import Cursor from './components/cursor'
 import Preloader from './components/preloader'
 import ConsoleStyles from './components/console'
+import { check } from './utils/check'
 
 class App {
     constructor() {
@@ -15,16 +16,8 @@ class App {
         this.init()
     }
 
-    isMobile() {
-        if(!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
-            return false
-        } else {
-            return true
-        }
-    }
-
     init() {
-        if(!this.isMobile()) {
+        if(!check.isMobile()) {
             new SmoothScroll(this.element, this.elements)
             new Cursor()
         }
