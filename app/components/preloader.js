@@ -1,4 +1,5 @@
 import gsap from "gsap"
+import { check } from "../utils/check"
 
 export default class Preloader {
     constructor() {
@@ -46,6 +47,10 @@ export default class Preloader {
     lazyLoadVideo() {
         // var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"))
         const lazyVideo = document.querySelector('video.lazy')
+
+        // Update poster attribute
+        const posterSrc = check.isWebPSupported ? 'preview.webp' : 'preview.png'
+        lazyVideo.setAttribute('poster', `${posterSrc}`)
 
         // check if intersection observer is supported by the browser 
         // (use "in" operator for detecting features)
