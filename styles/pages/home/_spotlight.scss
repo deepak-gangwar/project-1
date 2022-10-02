@@ -9,14 +9,14 @@
 }
 
 .spotlight__subtitle {
-    font-size: 0.8vw;
+    font-size: $font-vw-xs;
     text-transform: uppercase;
 }
 
 .spotlight__title {
     margin-top: 3vw;
     margin-left: -0.5vw;
-    font-size: 4.9999997vw;
+    font-size: $font-vw-xl;
     letter-spacing: -.02em;
     word-spacing: -.02em;
     line-height: 1;
@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 480px) {
     .spotlight__title {
-        font-size: 1.6rem;
+        font-size: $font-rem-l;
         line-height: 1.25;
     }
 }
@@ -46,7 +46,7 @@
 }
 
 .spotlight__slider__item {
-    background: rgba(0, 0, 0, 0.04);
+    background: $color-lightgray;
 }
 
 @media only screen and (max-width: 480px) {

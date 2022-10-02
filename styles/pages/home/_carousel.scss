@@ -6,7 +6,7 @@
 
 .carousel__background {
     height: 100%;
-    background: rgba(0, 0, 0, 0.04);
+    background: $color-lightgray;
 }
 
 .carousel__background img {
@@ -49,14 +49,14 @@
 
 @media only screen and (max-width: 480px) {
     .carousel__heading {
-        font-size: 1.6rem;
+        font-size: $font-rem-l;
         line-height: 1.25;
     }
 }
 
 .carousel__heading.current {
     display: block;
-    font-size: 5.6vw;
+    font-size: $font-vw-xxl;
     letter-spacing: -0.15vw;
     line-height: 1;
 }
@@ -84,7 +84,7 @@
 
 @media only screen and (max-width: 480px) {
     .carousel__text {
-        font-size: 0.75rem;
+        font-size: $font-rem-s;
         margin-right: 30vw;
     }
 }

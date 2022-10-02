@@ -1,5 +1,6 @@
 $color-white: rgb(255, 255, 255);
 $color-black: rgb(0, 0, 0);
+$color-lightgray: rgba(0, 0, 0, 0.04);
 
 // Theming
 $color-primary: rgb(244, 244, 242);
@@ -8,6 +9,20 @@ $color-orange: rgb(171, 174, 168);
 
 // Font
 $suisse: 'Suisse Intl';
+
+// Font sizing
+$font-rem-xs: 0.5rem;
+$font-rem-s: 0.75rem;
+$font-rem-m: 1rem;
+$font-rem-l: 1.6rem;
+$font-rem-xl: 6rem;
+
+$font-vw-xs: 0.8vw;
+$font-vw-s: 1vw;
+$font-vw-m: 2vw;
+$font-vw-l: 3vw;
+$font-vw-xl: 5vw;
+$font-vw-xxl: 6vw;
 
 // Easings
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);

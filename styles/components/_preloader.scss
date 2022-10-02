@@ -12,13 +12,13 @@
 }
 
 .preloader__text {
-    font-size: 40px;
+    font-size: $font-vw-l;
     letter-spacing: -1px;
     margin: 30vh 0;
 }
 
 .preloader__number {
-    font-size: 12px;
+    font-size: $font-rem-s;
 }
 
 .preloader__progress-bar {

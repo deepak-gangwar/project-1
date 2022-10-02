@@ -25,7 +25,7 @@
 
 .ethos__img {
   position: absolute;
-  background: rgba(0, 0, 0, 0.04);
+  background: $color-lightgray;
 }
 
 @media only screen and (max-width: 480px) {
@@ -71,14 +71,14 @@
 }
 
 .ethos__subtitle {
-    font-size: 0.8vw;
+    font-size: $font-vw-xs;
     text-transform: uppercase;
 }
 
 .ethos__heading {
     margin-top: 12.333vw;
     margin-left: -0.5vw;
-    font-size: 4.9999997vw;
+    font-size: $font-vw-xl;
     letter-spacing: -.02em;
     word-spacing: -.02em;
     line-height: 1;
@@ -86,13 +86,13 @@
 
 @media only screen and (max-width: 480px) {
   .ethos__heading {
-    font-size: 1.6rem;
+    font-size: $font-rem-l;
     line-height: 1.25;
   }
 }
 
 .ethos__description {
-    font-size: .99999999vw;
+    font-size: $font-vw-s;
     letter-spacing: .02em;
     line-height: 2;
     margin: 2.8vw 0;
@@ -100,6 +100,6 @@
 
 @media only screen and (max-width: 480px) {
   .ethos__description {
-    font-size: 0.75rem;
+    font-size: $font-rem-s;
   }
 }

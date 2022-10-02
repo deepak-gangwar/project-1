@@ -15,7 +15,7 @@
 }
 
 .text-section__heading {
-    font-size: 4.9999997vw;
+    font-size: $font-vw-xl;
     letter-spacing: -.02em;
     word-spacing: -.02em;
     line-height: 1;
@@ -24,21 +24,21 @@
 
 @media only screen and (max-width: 480px) {
     .text-section__heading {
-        font-size: 1.6rem;
+        font-size: $font-rem-l;
         line-height: 1.25;
         margin-bottom: 15vw;
     }
 }
 
 .text-section__description {
-    font-size: .99999999vw;
+    font-size: $font-vw-s;
     letter-spacing: .02em;
     line-height: 2;
 }
 
 @media only screen and (max-width: 480px) {
     .text-section__description {
-        font-size: 0.75rem;
+        font-size: $font-rem-s;
         margin-right: 30vw;
     }
 }

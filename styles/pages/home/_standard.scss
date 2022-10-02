@@ -10,7 +10,7 @@
 }
 
 .standard__subtitle {
-  font-size: 0.8vw;
+  font-size: $font-vw-xs;
   text-transform: uppercase;
 }
 
@@ -29,26 +29,26 @@
 }
 
 .standard__heading {
-    font-size: 3vw;
+    font-size: $font-vw-l;
     line-height: 1.14;
     letter-spacing: -.05vw;
 }
 
 @media only screen and (max-width: 480px) {
   .standard__heading {
-    font-size: 1.6rem;
+    font-size: $font-rem-l;
   }
 }
 
 .standard__body {
-    font-size: .99999999vw;
+    font-size: $font-vw-s;
     letter-spacing: .02em;
     line-height: 2;
 }
 
 @media only screen and (max-width: 480px) {
   .standard__body {
-    font-size: 0.75rem;
+    font-size: $font-rem-s;
     margin-right: 10vw;
   }
 }

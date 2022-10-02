@@ -16,13 +16,13 @@
 }
 
 .newsletter__content  {
-    font-size: 2.91666666665vw;
+    font-size: $font-vw-l;
     margin: 1.6em 0;
 }
 
 @media only screen and (max-width: 480px) {
     .newsletter__content {
-        font-size: 1.6rem;
+        font-size: $font-rem-l;
         line-height: 1.25;
     }
 }
@@ -45,7 +45,7 @@
     caret-color: $color-accent;
     // This was causing issue of background and foreground not having sufficient contrast ratio
     // color: $color-orange;
-    font-size: .6944444444vw;
+    font-size: $font-vw-xs;
     letter-spacing: .06em;
     text-transform: uppercase;
     margin-right: 0.5555555555vw;
@@ -57,7 +57,7 @@
 @media only screen and (max-width: 480px) {
     .newsletter__input {
         border-radius: 27.47222222222vw;
-        font-size: 0.5rem;
+        font-size: $font-rem-xs;
         margin-right: 1vw;
         padding: 5vw 6vw;
         height: 10vw;

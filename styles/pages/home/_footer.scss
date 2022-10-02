@@ -38,7 +38,7 @@
 }
 
 .footer__list__name {
-    font-size: 1.9444444444vw;
+    font-size: $font-vw-m;
     margin-bottom: 1.9444444443vw;
     padding-bottom: 0.9027777777vw;
     position: relative;
@@ -46,7 +46,7 @@
 
 @media only screen and (max-width: 480px) {
     .footer__list__name {
-        font-size: 1.6rem;
+        font-size: $font-rem-l;
         line-height: 1.25;
         margin-top: 10vw;
     }
@@ -67,13 +67,13 @@
 }
 
 .footer__link  {
-    font-size: .9722222222vw;
+    font-size: $font-vw-s;
     line-height: 2.57;
 }
 
 @media only screen and (max-width: 480px) {
     .footer__link {
-        font-size: 0.5rem;
+        font-size: $font-rem-xs;
     }
 }
 
@@ -82,7 +82,7 @@
     justify-content: space-between;
     margin: auto;
     width: 94.4444444443vw;
-    font-size: .6944444444vw;
+    font-size: $font-vw-xs;
     letter-spacing: .06em;
     line-height: 2.2;
     text-transform: uppercase;
@@ -95,7 +95,7 @@
         margin: 0;
         padding: 0;
         width: auto;
-        font-size: 0.5rem;
+        font-size: $font-rem-xs;
     }
 
     // to make tap targets of appropriate size
