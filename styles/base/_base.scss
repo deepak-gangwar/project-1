@@ -28,3 +28,30 @@ image, picture {
         display: none;
     }
 }
+
+.underline {
+    will-change: transform;
+    position: relative;
+}
+
+.underline:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    will-change: transform;
+    background: currentColor;
+    opacity: 0.6;
+    transform-origin: right center;
+    transition: transform .5s cubic-bezier(1,0,0,1);
+}
+
+@media (hover: hover) {
+    .underline:hover:after {
+        transform:scaleX(1);
+        transform-origin: left center;
+    }
+}
