@@ -3,6 +3,7 @@ import Cursor from './components/cursor'
 import Preloader from './components/preloader'
 import ConsoleStyles from './components/console'
 import { check } from './utils/check'
+import Carousel from './components/carousel'
 
 class App {
     constructor() {
@@ -14,6 +15,7 @@ class App {
         this.createPreloader()
         this.createConsoleStyles()
         this.init()
+        this.createCarousel()
     }
 
     init() {
@@ -24,11 +26,15 @@ class App {
     }
 
     createPreloader() {
-        this.preloader = new Preloader
+        this.preloader = new Preloader()
     }
 
     createConsoleStyles() {
         ConsoleStyles()
+    }
+
+    createCarousel() {
+        this.carousel = new Carousel()
     }
 }
 
