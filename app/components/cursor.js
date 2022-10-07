@@ -1,3 +1,5 @@
+import gsap from "gsap"
+
 export default class Cursor {
     constructor() {
         this.bind() 
@@ -6,16 +8,18 @@ export default class Cursor {
 
         this.video = document.querySelector('.video')
         this.cursor = {
-            el: document.querySelector('.video__cursor'),
-            bound: document.querySelector('.video__cursor').getBoundingClientRect().width,
+            el: document.querySelector('.cursor'),
+            bound: document.querySelector('.cursor').getBoundingClientRect().width,
             pos: {
                 x: 0,
                 y: 0
             }
         }
 
-        this.targetX = 0
-        this.targetY = 0
+        this.target = {
+            x: 0,
+            y: 0
+        }
 
         this.mouse = {
             x: 0,
@@ -42,25 +46,22 @@ export default class Cursor {
 
     on() {
         this.state.isHovering = true
+        this.cursor.el.style.opacity = 1
     }
     
     off() {
         this.state.isHovering = false
+        this.cursor.el.style.opacity = 0
     }
 
     update() {
         this.cursor.pos.x += (this.mouse.x - this.cursor.pos.x) * this.ease
         this.cursor.pos.y += (this.mouse.y - this.cursor.pos.y) * this.ease
 
-        this.targetX = this.cursor.pos.x - this.cursor.bound / 2
-        this.targetY = this.cursor.pos.y - this.cursor.bound / 2
+        this.target.x = this.cursor.pos.x - this.cursor.bound / 2
+        this.target.y = this.cursor.pos.y - this.cursor.bound / 2
             
-        if(!this.state.isHovering) {
-            this.cursor.el.style.transform = `translate(${this.targetX}px, ${this.targetY}px) scale(0)`
-        }
-        else if(this.state.isHovering) {
-            this.cursor.el.style.transform = `translate(${this.targetX}px, ${this.targetY}px) scale(1)`
-        }
+        this.cursor.el.style.transform = `translate3d(${this.target.x}px, ${this.target.y}px, 0)`
         
         this.requestAnimationFrame(this.update)
     }

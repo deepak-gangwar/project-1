@@ -55,3 +55,29 @@ image, picture {
         transform-origin: left center;
     }
 }
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6rem;
+    height: 6rem;
+    font-size: $font-vw-s;
+    background: $color-orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-primary;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+    .cursor {
+        display: none;
+    }
+}

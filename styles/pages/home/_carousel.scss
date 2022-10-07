@@ -74,6 +74,12 @@
     will-change: transform
 }
 
+@media only screen and (max-width: 480px) {
+    .carousel__heading .lineWord {
+        margin-left: 0;
+    }
+}
+
 .carousel__heading:not(.current) .lineWord {
     transform: translate3d(0,130%,0);
     transition: transform 1.2s cubic-bezier(.77,0,.175,1)
