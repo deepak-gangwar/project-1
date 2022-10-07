@@ -1,34 +1,18 @@
-import gsap from "gsap"
-
 export default class Cursor {
     constructor() {
         this.bind() 
-
-        this.ease = 0.1
-
+        
         this.video = document.querySelector('.video')
         this.cursor = {
             el: document.querySelector('.cursor'),
             bound: document.querySelector('.cursor').getBoundingClientRect().width,
-            pos: {
-                x: 0,
-                y: 0
-            }
+            current: [0, 0],
+            target: [0, 0],
         }
 
-        this.target = {
-            x: 0,
-            y: 0
-        }
-
-        this.mouse = {
-            x: 0,
-            y: 0
-        }
-
-        this.state = {
-            isHovering: false
-        }
+        this.ease = 0.1
+        this.mouse = [0, 0]
+        this.isHovering = false
 
         this.rAF = undefined
 
@@ -36,32 +20,54 @@ export default class Cursor {
     }
 
     bind() {
-        ['getPos', 'on', 'off', 'update'].forEach(fn => this[fn] = this[fn].bind(this))
+        ['getPos', 'hideOnScroll', 'on', 'off', 'update'].forEach(fn => this[fn] = this[fn].bind(this))
+    }
+
+    createObserver() {
+        if("IntersectionObserver" in window) {
+            let options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0
+            }
+
+            const observer = new IntersectionObserver(this.hideOnScroll, options)
+            observer.observe(this.video)
+        }
+    }
+
+    hideOnScroll(entries, observer) {
+        this.off()
+        // entries.forEach(entry => {
+        //     if(entry.isIntersecting) {
+        //         // do something
+        //     }
+        // })
     }
 
     getPos(e) {
-        this.mouse.x = e.clientX
-        this.mouse.y = e.clientY
+        this.mouse[0] = e.clientX
+        this.mouse[1] = e.clientY
     }
 
     on() {
-        this.state.isHovering = true
+        this.isHovering = true
         this.cursor.el.style.opacity = 1
     }
     
     off() {
-        this.state.isHovering = false
+        this.isHovering = false
         this.cursor.el.style.opacity = 0
     }
 
     update() {
-        this.cursor.pos.x += (this.mouse.x - this.cursor.pos.x) * this.ease
-        this.cursor.pos.y += (this.mouse.y - this.cursor.pos.y) * this.ease
+        this.cursor.current[0] += (this.mouse[0] - this.cursor.current[0]) * this.ease
+        this.cursor.current[1] += (this.mouse[1] - this.cursor.current[1]) * this.ease
 
-        this.target.x = this.cursor.pos.x - this.cursor.bound / 2
-        this.target.y = this.cursor.pos.y - this.cursor.bound / 2
+        this.cursor.target[0] = this.cursor.current[0] - this.cursor.bound / 2
+        this.cursor.target[1] = this.cursor.current[1] - this.cursor.bound / 2
             
-        this.cursor.el.style.transform = `translate3d(${this.target.x}px, ${this.target.y}px, 0)`
+        this.cursor.el.style.transform = `translate3d(${this.cursor.target[0]}px, ${this.cursor.target[1]}px, 0)`
         
         this.requestAnimationFrame(this.update)
     }
@@ -95,6 +101,7 @@ export default class Cursor {
     }
 
     init() {
+        this.createObserver()
         this.addEventListeners()
         this.update()
     }
