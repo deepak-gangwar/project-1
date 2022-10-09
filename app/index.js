@@ -4,6 +4,7 @@ import Preloader from './components/preloader'
 import ConsoleStyles from './components/console'
 import { check } from './utils/check'
 import Carousel from './components/carousel'
+import VideoPlayer from './components/videoPlayer'
 
 class App {
     constructor() {
@@ -16,6 +17,7 @@ class App {
         this.createConsoleStyles()
         this.init()
         this.createCarousel()
+        this.createVideoPlayer()
     }
 
     init() {
@@ -35,6 +37,10 @@ class App {
 
     createCarousel() {
         this.carousel = new Carousel()
+    }
+
+    createVideoPlayer() {
+        this.videoPlayer = new VideoPlayer()
     }
 }
 
