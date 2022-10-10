@@ -45,8 +45,7 @@ export default class VideoPlayer {
         let source = document.createElement('source')
         // source.src = t.video.video.src
         // source.src = 'https://asset.cloudinary.com/dsd5tjyri/21751a2e43f3e881b71a367602311186'
-        // source.src = 'reel.mp4'
-        source.src = 'preview.mp4'
+        source.src = 'reel.mp4'
         source.type = 'video/mp4'
         video.appendChild(source)
 
