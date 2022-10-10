@@ -1,21 +1,22 @@
+import gsap from "gsap"
+
 export default class VideoPlayer {
     constructor() {
         this.bind()
 
-        this.trigger = document.querySelector('.video')
-
         this.isMuted = false
         this.isPlaying = true
         this.isIdle = false
-
         this.isOpen = false
         
-        this.trigger.addEventListener('click', this.togglePlayerOpen)
+        this.rAF = undefined
         
+        this.trigger = document.querySelector('section.video')
+        this.trigger.addEventListener('click', this.togglePlayerOpen)
     }
 
     bind() {
-        ['createPlayer', 'checkMute', 'checkPause', 'onClose', 'togglePlayerOpen'].forEach(fn => this[fn] = this[fn].bind(this))
+        ['createPlayer', 'checkMute', 'checkPause', 'onRaf', 'onClose', 'togglePlayerOpen', 'onEnded', 'changeTime', 'onCanPlay', 'onMouseMove', 'onIdle', 'enter'].forEach(fn => this[fn] = this[fn].bind(this))
     }
 
     togglePlayerOpen() {
@@ -24,8 +25,7 @@ export default class VideoPlayer {
             document.body.style.overflow = 'visible'
             this.isOpen = false
         } else {
-            this.createPlayer()
-            this.addEventListeners()
+            this.init()
             document.body.style.overflow = 'hidden'
             this.isOpen = true
         }
@@ -43,8 +43,10 @@ export default class VideoPlayer {
         videoPlayer.appendChild(video)
 
         let source = document.createElement('source')
-        // source.src = 'https://asset.cloudinary.com/dsd5tjyri/1cf9f64a978e407d65165e3f91919120'
-        source.src = 'reel.mp4'
+        // source.src = t.video.video.src
+        // source.src = 'https://asset.cloudinary.com/dsd5tjyri/21751a2e43f3e881b71a367602311186'
+        // source.src = 'reel.mp4'
+        source.src = 'preview.mp4'
         source.type = 'video/mp4'
         video.appendChild(source)
 
@@ -82,8 +84,6 @@ export default class VideoPlayer {
         mute.innerHTML = "Mute"
         controls.appendChild(mute)
 
-        document.body.appendChild(videoPlayer)
-
         // Add all these to the UI which can be used in place of $refs
         this.ui = {
             videoPlayer,
@@ -93,12 +93,74 @@ export default class VideoPlayer {
             pause,
             mute,
         }
+
+        this.enter()
+        document.body.appendChild(videoPlayer)
     }
 
     removePlayer() {
         document.body.removeChild(this.ui.videoPlayer)
     }
+
+    // isNative() {
+    //     this.ui.video.play()
+    //     this.ui.video.setAttribute("controls", "controls")
+
+    //     if (this.isAndroid) {
+    //         this.ui.video.requestFullscreen()
+    //     } else {
+    //         this.ui.video.addEventListener("webkitendfullscreen", function() {
+    //             this.togglePlayerOpen()
+    //         })
+    //     }
+    // }
+
+    onRaf() {
+        this.setTime()
+        this.requestAnimationFrame(this.onRaf)
+    }
     
+    onCanPlay() {
+        let ui = this.ui,
+            video = ui.video,
+            range = ui.range,
+            progress = ui.progress;
+
+        if(null != video && video.duration) {
+            range.max = Math.round(10 * video.duration)
+            progress.max = Math.round(10 * video.duration)
+        }
+    }
+
+    onMouseMove() {
+        const vp = this.ui.videoPlayer
+
+        if(!this.isIdle) {
+            this.isIdle = true
+            // if(null === (vp = this.$el) || vp !== undefined) {
+            if(null === vp || vp !== undefined) {
+                vp.classList.add("is-idle")
+                // this.onMouseEnterCursor("close", "Close")
+            }
+        }
+
+        if(this.isIdle) {
+            this.isIdle = false
+            gsap.killTweensOf(this.onIdle)
+            gsap.delayedCall(1.5, this.onIdle)
+        }
+    }
+
+    onIdle() {
+        const vp = this.ui.videoPlayer
+
+        // if(null === (vp = this.$el) || vp !== undefined) {
+        if(null === vp || vp !== undefined) {
+            vp.classList.remove("is-idle")
+            // this.onMouseLeaveCursor()
+        }
+    }
+
     checkMute() {
         if(this.isMuted) 
             this.onMuted()
@@ -139,9 +201,13 @@ export default class VideoPlayer {
         this.isPlaying = false
     }
 
+    onEnded() {
+        this.togglePlayerOpen()
+    }
+
     onClose() {
         if(!this.isTouch && !this.isMobile) {
-            this.togglePlayerOpen()
+            this.leave(this.togglePlayerOpen)
         }
 
         if(document.fullscreenElement && this.isTouch) {
@@ -149,10 +215,83 @@ export default class VideoPlayer {
         }
     }
 
+    setTime() {
+        let ui = this.ui, 
+            video = ui.video,
+            range = ui.range,
+            progress = ui.progress;
+
+        this.videoCurrentTime = video.currentTime
+        range.value = 10 * video.currentTime
+        progress.value = 10 * video.currentTime
+    }
+
+    changeTime() {
+        this.ui.video.currentTime = this.ui.range.value / 10 
+        this.setTime()
+    }
+
+    enter() {
+        gsap.fromTo(this.ui.videoPlayer, { autoAlpha: 0 }, { autoAlpha: 1 })
+    }
+
+    leave(t) {
+        this.ui.video.pause()
+        gsap.fromTo(this.ui.videoPlayer, { autoAlpha: 1 }, { autoAlpha: 0, onComplete: t })
+    }
+
+    requestAnimationFrame() {
+        this.rAF = requestAnimationFrame(this.onRaf)
+    }
+
+    cancelAnimationFrame() {
+        cancelAnimationFrame(this.rAF)
+    }
+
     addEventListeners() {
+        this.ui.videoPlayer.addEventListener('mousemove', this.onMouseMove)
+        
         this.ui.video.addEventListener('click', this.onClose)
+        this.ui.video.addEventListener('fullscreenchange', this.onClose)
+        this.ui.video.addEventListener('ended', this.onEnded)
+        this.ui.video.addEventListener('canplay', this.onCanPlay)
+        
         this.ui.pause.addEventListener('click', this.checkPause)
+        this.ui.range.addEventListener('input', this.changeTime)
         this.ui.mute.addEventListener('click', this.checkMute)
         
+    }
+    
+    removeEventListeners() {
+        this.ui.videoPlayer.removeEventListener('mousemove', this.onMouseMove)
+        
+        this.ui.video.removeEventListener('click', this.onClose)
+        this.ui.video.addEventListener('fullscreenchange', this.onClose)
+        this.ui.video.removeEventListener('ended', this.onEnded)
+        this.ui.video.removeEventListener('canplay', this.onCanPlay)
+        
+        this.ui.pause.removeEventListener('click', this.checkPause)
+        this.ui.range.removeEventListener('input', this.changeTime)
+        this.ui.mute.removeEventListener('click', this.checkMute)
+
+    }
+
+    destroy() {
+        if(!this.isTouch) {
+            gsap.killTweensOf(this.onIdle)
+
+            this.removeEventListeners()
+            this.cancelAnimationFrame()
+        }
+    }
+
+    init() {
+        // if(this.isTouch) {
+        //     this.isNative()
+        // } else {
+            this.createPlayer()
+            this.addEventListeners()
+            this.onRaf()
+        // }
     }
 }
