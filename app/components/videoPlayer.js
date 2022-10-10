@@ -4,6 +4,9 @@ export default class VideoPlayer {
     constructor() {
         this.bind()
 
+        this.isMobile = this.setIsMobile()
+        this.isAndroid = this.setIsAndroid()
+
         this.isMuted = false
         this.isPlaying = true
         this.isIdle = false
@@ -17,6 +20,14 @@ export default class VideoPlayer {
 
     bind() {
         ['createPlayer', 'checkMute', 'checkPause', 'onRaf', 'onClose', 'togglePlayerOpen', 'onEnded', 'changeTime', 'onCanPlay', 'onMouseMove', 'onIdle', 'enter'].forEach(fn => this[fn] = this[fn].bind(this))
+    }
+
+    setIsMobile() {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+    }
+
+    setIsAndroid() {
+        return window.navigator.userAgent.toLowerCase().includes("android")
     }
 
     togglePlayerOpen() {
@@ -101,18 +112,18 @@ export default class VideoPlayer {
         document.body.removeChild(this.ui.videoPlayer)
     }
 
-    // isNative() {
-    //     this.ui.video.play()
-    //     this.ui.video.setAttribute("controls", "controls")
+    isNative() {
+        this.ui.video.play()
+        this.ui.video.setAttribute("controls", "controls")
 
-    //     if (this.isAndroid) {
-    //         this.ui.video.requestFullscreen()
-    //     } else {
-    //         this.ui.video.addEventListener("webkitendfullscreen", function() {
-    //             this.togglePlayerOpen()
-    //         })
-    //     }
-    // }
+        if (this.isAndroid) {
+            this.ui.video.requestFullscreen()
+        } else {
+            this.ui.video.addEventListener("webkitendfullscreen", function() {
+                this.togglePlayerOpen()
+            })
+        }
+    }
 
     onRaf() {
         this.setTime()
@@ -285,12 +296,12 @@ export default class VideoPlayer {
     }
 
     init() {
-        // if(this.isTouch) {
-        //     this.isNative()
-        // } else {
+        if(this.isTouch) {
+            this.isNative()
+        } else {
             this.createPlayer()
             this.addEventListeners()
             this.onRaf()
-        // }
+        }
     }
 }
