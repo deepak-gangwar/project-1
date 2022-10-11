@@ -60,6 +60,12 @@ export default class VideoPlayer {
         source.type = 'video/mp4'
         video.appendChild(source)
 
+        let close = document.createElement('button')
+        close.classList.add('close')
+        close.innerHTML = "Close"
+        videoPlayer.appendChild(close)
+
+
         let gradient = document.createElement('div')
         gradient.classList.add('gradient')
         videoPlayer.append(gradient)
@@ -102,6 +108,7 @@ export default class VideoPlayer {
             progress,
             pause,
             mute,
+            close
         }
 
         this.enter()
@@ -269,6 +276,7 @@ export default class VideoPlayer {
         this.ui.pause.addEventListener('click', this.checkPause)
         this.ui.range.addEventListener('input', this.changeTime)
         this.ui.mute.addEventListener('click', this.checkMute)
+        this.ui.close.addEventListener('click', this.onClose)
         
     }
     
@@ -283,6 +291,7 @@ export default class VideoPlayer {
         this.ui.pause.removeEventListener('click', this.checkPause)
         this.ui.range.removeEventListener('input', this.changeTime)
         this.ui.mute.removeEventListener('click', this.checkMute)
+        this.ui.close.removeEventListener('click', this.onClose)
 
     }
 

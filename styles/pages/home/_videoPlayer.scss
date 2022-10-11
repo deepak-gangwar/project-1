@@ -122,7 +122,8 @@ video {
  
 .mute,
 .pause,
-.play {
+.play,
+.close {
     font-family: Suisse Intl;
     /* font-size: 3.73333vw; */
     font-size: 1vw;
@@ -135,7 +136,8 @@ video {
  
 .mute:after,
 .pause:after,
-.play:after {
+.play:after,
+.close:after {
     position: absolute;
     left: 0;
     bottom: -2px;
@@ -152,10 +154,23 @@ video {
 @media (hover: hover) {
     .mute:hover:after,
     .pause:hover:after,
-    .play:hover:after {
+    .play:hover:after,
+    .close:hover:after {
             transform: scaleX(1);
             transform-origin: left center;
     }
+}
+
+.close {
+    position: absolute;
+    top: 50px;
+    left: 90%;
+    transform: translateX(-50%);
+    // width: 6rem;
+    // height: 6rem;
+    // background: $color-primary;
+    // color: $color-accent;
+    z-index: 3;
 }
  
 .mute {
